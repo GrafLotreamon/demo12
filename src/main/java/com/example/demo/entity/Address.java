@@ -1,55 +1,25 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table (name = "address")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "City")
+    @Column(name = "city")
     private String City;
 
-    @Column(name = "Street")
+    @Column(name = "street")
     private String Street;
 
-    @Column(name = "HomeNumber")
+    @Column(name = "home_number")
     private int HomeNumber;
 
-    public Address() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCity() {
-        return City;
-    }
-
-    public void setCity(String city) {
-        City = city;
-    }
-
-    public String getStreet() {
-        return Street;
-    }
-
-    public void setStreet(String street) {
-        Street = street;
-    }
-
-    public int getHomeNumber() {
-        return HomeNumber;
-    }
-
-    public void setHomeNumber(int homeNumber) {
-        HomeNumber = homeNumber;
-    }
 }
